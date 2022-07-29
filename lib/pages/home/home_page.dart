@@ -11,14 +11,41 @@ class HomePage extends StatelessWidget {
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              IntroCard(text: "Card1"),
-              IntroCard(text: "Card2"),
-              IntroCard(text: "Card3"),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Text(
+                          "Bem-vindo de volta 👋",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w300),
+                        ),
+                        Text(
+                          "Portifólio do Flávio",
+                          style: TextStyle(
+                              fontSize: 28, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                    const Icon(
+                      Icons.account_circle,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
