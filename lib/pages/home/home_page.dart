@@ -16,24 +16,48 @@ class HomePage extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           child: Padding(
             padding: const EdgeInsets.all(15.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Header(),
-                SizedBox(height: 25),
-                Text(
-                  "Projetos",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 10),
-                ProjectCard(
-                  projectName: "Meu Projeto",
-                  projectYear: 2022,
-                  projectDescription:
-                      "Descrição do projeto para maiores detalhes.",
-                  //aqui poderia ter colocado o projectImage mas ja esta definido valor padrão no construtor da classe
-                )
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Header(),
+                  const SizedBox(height: 25),
+                  const Text(
+                    "Projetos",
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10),
+                  SizedBox(
+                    height: 350,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        ProjectCard(
+                          projectName: "Meu Projeto",
+                          projectYear: 2022,
+                          projectDescription:
+                              "Descrição do projeto para maiores detalhes.",
+                          //aqui poderia ter colocado o projectImage mas ja esta definido valor padrão no construtor da classe
+                        ),
+                        ProjectCard(
+                          projectName: "Meu Projeto",
+                          projectYear: 2022,
+                          projectDescription:
+                              "Descrição do projeto para maiores detalhes.",
+                          //aqui poderia ter colocado o projectImage mas ja esta definido valor padrão no construtor da classe
+                        ),
+                        ProjectCard(
+                          projectName: "Meu Projeto",
+                          projectYear: 2022,
+                          projectDescription:
+                              "Descrição do projeto para maiores detalhes.",
+                          //aqui poderia ter colocado o projectImage mas ja esta definido valor padrão no construtor da classe
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
