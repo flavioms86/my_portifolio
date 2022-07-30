@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portifolio/example/projects.dart';
 import 'package:my_portifolio/widgets/Cards/intro_card.dart';
 import 'package:my_portifolio/widgets/Header/header.dart';
 
@@ -29,31 +30,12 @@ class HomePage extends StatelessWidget {
                   const SizedBox(height: 10),
                   SizedBox(
                     height: 350,
-                    child: ListView(
+                    child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      children: const [
-                        ProjectCard(
-                          projectName: "Meu Projeto",
-                          projectYear: 2022,
-                          projectDescription:
-                              "Descrição do projeto para maiores detalhes.",
-                          //aqui poderia ter colocado o projectImage mas ja esta definido valor padrão no construtor da classe
-                        ),
-                        ProjectCard(
-                          projectName: "Meu Projeto",
-                          projectYear: 2022,
-                          projectDescription:
-                              "Descrição do projeto para maiores detalhes.",
-                          //aqui poderia ter colocado o projectImage mas ja esta definido valor padrão no construtor da classe
-                        ),
-                        ProjectCard(
-                          projectName: "Meu Projeto",
-                          projectYear: 2022,
-                          projectDescription:
-                              "Descrição do projeto para maiores detalhes.",
-                          //aqui poderia ter colocado o projectImage mas ja esta definido valor padrão no construtor da classe
-                        ),
-                      ],
+                      itemCount: projects.length,
+                      itemBuilder: (context, index) {
+                        return ProjectCard(project: projects[index]);
+                      },
                     ),
                   )
                 ],
