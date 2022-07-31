@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:my_portifolio/example/projects.dart';
 import 'package:my_portifolio/widgets/Cards/intro_card.dart';
 import 'package:my_portifolio/widgets/Header/header.dart';
@@ -11,6 +12,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        child: const Icon(Icons.share, color: Colors.white),
+        onPressed: () => print("Texto"),
+      ),
       body: SafeArea(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
