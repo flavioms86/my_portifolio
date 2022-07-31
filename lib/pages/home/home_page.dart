@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.black,
         child: const Icon(Icons.share, color: Colors.white),
-        onPressed: () => print("Texto"),
+        onPressed: () => print("shared pressed"),
       ),
       body: SafeArea(
         child: SizedBox(
