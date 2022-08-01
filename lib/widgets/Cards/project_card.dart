@@ -17,7 +17,11 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => Navigator.push(
-          context, MaterialPageRoute(builder: (_) => ProjectDetail())),
+          context,
+          MaterialPageRoute(
+              builder: (_) => ProjectDetail(
+                    project: project,
+                  ))),
       child: Container(
         height: 350,
         width: MediaQuery.of(context).size.width / 1.3,
